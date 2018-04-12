@@ -3,7 +3,7 @@ var AbstractEmployee = function(data) {
     throw new Error('Can\'t instantiate abstract class!');
   }
   if(data && typeof data.id === 'number' && typeof data.name === 'string' && typeof data.salary === 'number') {
-    this.id = data.id;
+    this.id = 'id' + data.id;
     this.name = data.name;
     this.salary = data.salary;
   } else {

@@ -1,7 +1,7 @@
 var AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
 
 var PerHourSalaryEmployee = function() {
-  Animal.apply(this, arguments);
+  AbstractEmployee.apply(this, arguments);
 };
 
 PerHourSalaryEmployee.prototype = Object.create(AbstractEmployee.prototype);

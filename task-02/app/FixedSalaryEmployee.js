@@ -1,7 +1,7 @@
 var AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
 
 var FixedSalaryEmployee = function() {
-  Animal.apply(this, arguments);
+  AbstractEmployee.call(this, arguments[0]);
 };
 
 FixedSalaryEmployee.prototype = Object.create(AbstractEmployee.prototype);
@@ -11,4 +11,4 @@ FixedSalaryEmployee.prototype.getSalary = function() {
   return this.salary;
 }
 
-module.exports.PerHourSalaryEmployee = FixedSalaryEmployee;
+module.exports.FixedSalaryEmployee = FixedSalaryEmployee;
