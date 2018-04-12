@@ -8,7 +8,7 @@ PerHourSalaryEmployee.prototype = Object.create(AbstractEmployee.prototype);
 PerHourSalaryEmployee.prototype.constructor = PerHourSalaryEmployee;
 
 PerHourSalaryEmployee.prototype.getSalary = function() {
-  return this.salary * 8 * 20.88;
+  return parseFloat((this.salary * 8 * 20.88).toFixed(2));
 }
 
 module.exports.PerHourSalaryEmployee = PerHourSalaryEmployee;
