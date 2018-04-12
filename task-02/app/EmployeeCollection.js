@@ -2,7 +2,6 @@ var     FixedSalaryEmployee = require('./FixedSalaryEmployee').FixedSalaryEmploy
         PerHourSalaryEmployee = require('./PerHourSalaryEmployee').PerHourSalaryEmployee,
         AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
 
-
 var EmployeeCollection = function(data) {
   var info = getInfo();
   for(var i = 0; i < info.length; i++) {
@@ -46,6 +45,42 @@ var EmployeeCollection = function(data) {
   }
 }
 
+EmployeeCollection.getCollectionData = function(collection) {
+  var result = [];
+  for(let i = 0; i < collection.length; i++) {
+    result.push({
+      id: collection[i].id,
+      monthlySalary: collection[i].getSalary(),
+      name: collection[i].name
+    })
+  }
+  return result;
+} 
+
+EmployeeCollection.getFiveNames = function(collection) {
+  var result = [];
+  for(let i = 0; i < 5; i++) {
+    result.push(collection[i].name);
+  } 
+  return result; 
+}
+
+EmployeeCollection.getThreeIds  = function(collection) {
+  var result = [];
+  for(let i = collection.length - 1; i > collection.length - 4; i--) {
+    result.push(collection[i].id);
+  } 
+  return result; 
+}
+
+EmployeeCollection.getCollectionAverage   = function(collection) {
+  var result = 0;
+  for(let i = 0; i < collection.length; i++) {
+    result += collection[i].getSalary();
+  } 
+  result /= collection.length;
+  return parseFloat(result.toFixed(2)); 
+}
 
 module.exports.EmployeeCollection = EmployeeCollection;
 
