@@ -1,8 +1,7 @@
-var     FixedSalaryEmployee = require('./FixedSalaryEmployee').FixedSalaryEmployee,
-        PerHourSalaryEmployee = require('./PerHourSalaryEmployee').PerHourSalaryEmployee,
-        AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
+import {FixedSalaryEmployee} from './FixedSalaryEmployee';
+import {PerHourSalaryEmployee} from './PerHourSalaryEmployee';
 
-class EmployeeCollection {
+export class EmployeeCollection {
   constructor(data) {
     var info = getInfo();
     for(var i = 0; i < info.length; i++) {
@@ -89,8 +88,3 @@ class EmployeeCollection {
     return parseFloat(result.toFixed(2)); 
   }
 }
-
-module.exports.EmployeeCollection = EmployeeCollection;
-
-
-

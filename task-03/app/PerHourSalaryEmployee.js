@@ -1,6 +1,6 @@
-var AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
+import {AbstractEmployee} from './AbstractEmployee'
 
-class PerHourSalaryEmployee extends AbstractEmployee {
+export class PerHourSalaryEmployee extends AbstractEmployee {
   constructor(data) {
     super(data);
   }
@@ -8,5 +8,3 @@ class PerHourSalaryEmployee extends AbstractEmployee {
     return parseFloat((this.salary * 8 * 20.88).toFixed(2));
   }
 };
-
-module.exports.PerHourSalaryEmployee = PerHourSalaryEmployee;

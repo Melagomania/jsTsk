@@ -1,6 +1,5 @@
-var     EmployeeCollection = require('./EmployeeCollection').EmployeeCollection,
-        EmployeeData = require('./employees-collection');
-
+import {EmployeeCollection} from './EmployeeCollection';
+var EmployeeData = require('./employees-collection');
         
 var myEpmloyees = new EmployeeCollection(EmployeeData);
 console.log('Collection:', myEpmloyees);

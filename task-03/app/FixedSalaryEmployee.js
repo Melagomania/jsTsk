@@ -1,6 +1,6 @@
-var AbstractEmployee = require('./AbstractEmployee').AbstractEmployee;
+import {AbstractEmployee} from './AbstractEmployee';
 
-class FixedSalaryEmployee extends AbstractEmployee {
+export class FixedSalaryEmployee extends AbstractEmployee {
   constructor(data) {
     super(data);
   }
@@ -8,5 +8,3 @@ class FixedSalaryEmployee extends AbstractEmployee {
     return this.salary;
   }
 };
-
-module.exports.FixedSalaryEmployee = FixedSalaryEmployee;
