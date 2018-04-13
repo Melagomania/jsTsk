@@ -64,7 +64,10 @@ export class EmployeeCollection {
     var result = [];
     for(let i = 0; i < 5; i++) {
       result.push(collection[i].name);
-    } 
+    }
+    result.toString = function() {
+      return this.join(', ');
+    }
     return result; 
   }
 
@@ -76,6 +79,9 @@ export class EmployeeCollection {
     for(let i = collection.length - 1; i > collection.length - 4; i--) {
       result.push(collection[i].id);
     } 
+    result.toString = function() {
+      return this.join(', ');
+    }
     return result; 
   }
 

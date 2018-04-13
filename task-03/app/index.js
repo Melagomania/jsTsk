@@ -1,19 +1,20 @@
 import {EmployeeCollection} from './EmployeeCollection';
-var EmployeeData = require('./employees-collection');
+var     EmployeeData = require('./employees-collection'),  
+        myEpmloyees = new EmployeeCollection(EmployeeData),
+        collectionData = EmployeeCollection.getCollectionData(myEpmloyees),
+        fiveNames = EmployeeCollection.getFiveNames(myEpmloyees),
+        threeIds = EmployeeCollection.getThreeIds(myEpmloyees),
+        averageSalary = EmployeeCollection.getCollectionAverage(myEpmloyees),
+
+        namesField = document.getElementById('five-names'),
+        idsField = document.getElementById('three-ids'),
+        averageSalaryField = document.getElementById('collection-average'),
+        collectionContent = document.getElementById('collection-content');
+
+        namesField.innerText = fiveNames;
+        idsField.innerText = threeIds;
+        averageSalaryField.innerText = averageSalary;
+        collectionContent.innerText = JSON.stringify(EmployeeData, null, '\t');
         
-var myEpmloyees = new EmployeeCollection(EmployeeData);
-console.log('Collection:', myEpmloyees);
-
-var collectionData = EmployeeCollection.getCollectionData(myEpmloyees);
-console.log('Collection data', collectionData);
-
-var fiveNames = EmployeeCollection.getFiveNames(myEpmloyees);
-console.log('Last five names ', fiveNames);
-
-var threeIds = EmployeeCollection.getThreeIds(myEpmloyees);
-console.log('threeIds', threeIds);
-
-var averageSalary = EmployeeCollection.getCollectionAverage(myEpmloyees);
-console.log('Average salary', averageSalary);
 
 
