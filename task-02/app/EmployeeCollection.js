@@ -58,6 +58,9 @@ EmployeeCollection.getCollectionData = function(collection) {
 } 
 
 EmployeeCollection.getFiveNames = function(collection) {
+  if(collection.length < 5) {
+    throw new Error('Not enough elements');
+  }
   var result = [];
   for(let i = 0; i < 5; i++) {
     result.push(collection[i].name);
@@ -66,6 +69,9 @@ EmployeeCollection.getFiveNames = function(collection) {
 }
 
 EmployeeCollection.getThreeIds  = function(collection) {
+  if(collection.length < 3) {
+    throw new Error('Not enough elements');
+  }
   var result = [];
   for(let i = collection.length - 1; i > collection.length - 4; i--) {
     result.push(collection[i].id);
